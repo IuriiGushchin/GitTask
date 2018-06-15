@@ -11,7 +11,7 @@ import Foundation
 
 class rssParser: NSObject, XMLParserDelegate {
     
-    private var rssItems : [RSSItem] = []
+    private var rssItems : [RSSItem]=[]
     private var currentElement = ""
     private var currentPubDate : String = "" {
         didSet { //когда будем объявлять текущие данные для ячейки обрежем ненужные символы
@@ -29,23 +29,20 @@ class rssParser: NSObject, XMLParserDelegate {
         }
     }
     
-    private var parserComplitionHandler : (([RSSItem]) -> Void)?
+    private var parserComplitionHandler : (([RSSItem]?) -> Void)?
     
     
-    func parseFeed(url: String, completionHandler: (([RSSItem]) -> Void)?){
+    func parseFeed(url: String, completionHandler: (([RSSItem]?) -> Void)?){
         self.parserComplitionHandler = completionHandler
+        
         let url = URL(string: url)
         let request = URLRequest(url: url!)
         let session = URLSession.shared
-        _ = session.dataTask(with: request) { (data, responce, error) in
+        session.dataTask(with: request) { (data, responce, error) in
             let data = data!
-            let responce = responce!
-            print(data)
-            
             let parser = XMLParser(data: data)
             parser.delegate = self
             parser.parse()
-            
         }.resume()
     }
     
@@ -79,14 +76,17 @@ class rssParser: NSObject, XMLParserDelegate {
         if currentElement == "item"{//закончили итем - добавили в array
             let rssItem = RSSItem(title: currentTitle, description: currentDescription, pubDate: currentPubDate)
             self.rssItems.append(rssItem)
-        }
-    
-        func parserDidEndDocument(_ parser : XMLParser){
-            parserComplitionHandler?(rssItems)
-        }
-        
-        func parser(_ parser: XMLParser, parseErrorOccurred: Error){
-            print(parseErrorOccurred.localizedDescription)
+            print("+1")
         }
     }
+    
+    func parserDidEndDocument(_ parser : XMLParser){
+        print("zakon4ili")
+        parserComplitionHandler?(rssItems)
+    }
+    
+    func parser(_ parser: XMLParser, parseErrorOccurred: Error){
+        print(parseErrorOccurred.localizedDescription)
+    }
 }
+

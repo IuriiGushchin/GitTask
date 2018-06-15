@@ -15,13 +15,13 @@ class MyCustomCell: UITableViewCell {
     
     @IBOutlet weak var pubDateLabel: UILabel!
     
-    @IBOutlet weak var pupDescription: UITextView!
+    @IBOutlet weak var pubDescriptoin: UILabel!
     
     var item : RSSItem!{
         didSet{
             pubTitleLabel.text = item.title
             pubDateLabel.text = item.pubDate
-            pupDescription.text = item.description
+            pubDescriptoin.text = item.description
         }
     }
     

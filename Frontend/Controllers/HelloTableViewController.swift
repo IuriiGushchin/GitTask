@@ -12,18 +12,18 @@ class HelloTableViewController: UITableViewController {
     
     var rssItems : [RSSItem]?
     
-//    var name = ""
-//    var middlename = ""
-//    var shopping : [String] = []
-//    var titles = ["Новость1","Новость2","Новость3","Новость4"]
-//    var dates = ["12","34","56","78"]
-//    var descriptions = ["dafsda","gadfsaf","gdagfafs","You use image objects to represent image data of all kinds, and the UIImage class is capable of managing data for all image formats supported by the underlying platform. Image objects are immutable, so you always create them from existing image data, such as an image file on disk or programmatically created image data. An image object may contain a single image or a sequence of images you intend to use in an animation."]
-//
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fetchData()
+    }
+    
+    
+    
     func fetchData(){
         let feedParser = rssParser()
         print("!")
         feedParser.parseFeed(url: "https://developer.apple.com/news/rss/news.rss") { (rssItems) in
-            
+            print("!")
             self.rssItems = rssItems
             print(rssItems)
             print("!")
@@ -33,16 +33,15 @@ class HelloTableViewController: UITableViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("?")
-        fetchData()
-        print("?")
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

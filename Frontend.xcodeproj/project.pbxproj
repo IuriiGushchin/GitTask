@@ -17,7 +17,6 @@
 		713B68A620BD5639007C8E74 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713B68A520BD5639007C8E74 /* RegisterViewController.swift */; };
 		714A319220CABA290049B6BF /* HelloTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A319120CABA290049B6BF /* HelloTableViewController.swift */; };
 		714A319420CAC2690049B6BF /* MyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A319320CAC2690049B6BF /* MyCustomCell.swift */; };
-		717A438820CBC2CD00DD884A /* newsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717A438720CBC2CD00DD884A /* newsStruct.swift */; };
 		717A438A20CBEC3D00DD884A /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717A438920CBEC3D00DD884A /* RSSItem.swift */; };
 		717A438C20CBECC000DD884A /* rssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717A438B20CBECC000DD884A /* rssParser.swift */; };
 		C655187AE2F5A48FD37E329E /* Pods_Frontend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4041B62C7FB2F3C83A1DFD /* Pods_Frontend.framework */; };
@@ -39,7 +38,6 @@
 		713B68A520BD5639007C8E74 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		714A319120CABA290049B6BF /* HelloTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloTableViewController.swift; sourceTree = "<group>"; };
 		714A319320CAC2690049B6BF /* MyCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomCell.swift; sourceTree = "<group>"; };
-		717A438720CBC2CD00DD884A /* newsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsStruct.swift; sourceTree = "<group>"; };
 		717A438920CBEC3D00DD884A /* RSSItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
 		717A438B20CBECC000DD884A /* rssParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rssParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				712285F620BBE6EE003EAC7C /* User.swift */,
-				717A438720CBC2CD00DD884A /* newsStruct.swift */,
 				717A438920CBEC3D00DD884A /* RSSItem.swift */,
 			);
 			path = Model;
@@ -248,7 +245,6 @@
 				712285DE20BBDAA6003EAC7C /* AppDelegate.swift in Sources */,
 				717A438C20CBECC000DD884A /* rssParser.swift in Sources */,
 				712285F720BBE6EE003EAC7C /* User.swift in Sources */,
-				717A438820CBC2CD00DD884A /* newsStruct.swift in Sources */,
 				717A438A20CBEC3D00DD884A /* RSSItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
