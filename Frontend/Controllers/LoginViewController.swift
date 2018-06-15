@@ -13,7 +13,7 @@ import Alamofire
 
 class LoginViewController: UIViewController {
    
-    var ConnectionError = true
+    var ConnectionError = false
     var users = [Userstruct]()
     var pas = ""
     var use = ""
